@@ -8,14 +8,17 @@
 ### Group Name: "kubernetes-absent"
 ##### Alert Name: "KubeAPIDown"
 + *Message*: `KubeAPI has disappeared from Prometheus target discovery.`
-+ *Severity*: critical
++ *Severity*: critical/严重
++ *说明*: KubeApi服务从Prometheus的服务发现中消失(Prometheus未检测到正常的kube-apiserver)，可能原因是kube-apiserver服务出现故障，请检查Apiserver状态是否正常。
 ##### Alert Name: "KubeControllerManagerDown"
 + *Message*: `KubeControllerManager has disappeared from Prometheus target discovery.`
-+ *Severity*: critical
++ *Severity*: critical/严重
++ *说明*: KubeControllerManager服务从Prometheus的服务发现中消失(Prometheus未检测到正常的KubeControllerManager)，可能原因是KubeControllerManager服务出现故障或集群隐藏了KubeControllerManager(部分云平台可能存在该现象)，请检查KubeControllerManager状态是否正常。如果平台本身隐藏了KubeControllerManager，则需要将该规则禁用
 + *Runbook*: [Link](https://coreos.com/tectonic/docs/latest/troubleshooting/controller-recovery.html#recovering-a-controller-manager)
 ##### Alert Name: KubeSchedulerDown
 + *Message*: `KubeScheduler has disappeared from Prometheus target discovery`
-+ *Severity*: critical
++ *Severity*: critical/严重
++ *说明*: KubeScheduler服务从Prometheus的服务发现中消失(Prometheus未检测到正常的KubeScheduler)，可能原因是KubeScheduler服务出现故障或集群隐藏了KubeScheduler(部分云平台可能存在该现象)，请检查KubeScheduler状态是否正常。如果平台本身隐藏了KubeScheduler，则需要将该规则禁用
 + *Runbook*: [Link](https://coreos.com/tectonic/docs/latest/troubleshooting/controller-recovery.html#recovering-a-scheduler)
 ##### Alert Name: KubeletDown
 + *Message*: `Kubelet has disappeared from Prometheus target discovery.`
